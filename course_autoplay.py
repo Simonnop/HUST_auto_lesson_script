@@ -349,6 +349,8 @@ def main() -> None:
     opts = Options()
     # 需要人工登录，勿用无头模式
     opts.add_argument("--disable-blink-features=AutomationControlled")
+    # 启用浏览器静音，避免播放视频时外放声音
+    opts.add_argument("--mute-audio")
 
     try:
         driver = webdriver.Chrome(service=_build_chrome_service(), options=opts)
